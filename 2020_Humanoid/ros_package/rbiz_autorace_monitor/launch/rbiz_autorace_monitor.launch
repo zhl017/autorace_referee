@@ -1,0 +1,20 @@
+<launch>
+  <node pkg="rbiz_autorace_monitor" type="rbiz_autorace_monitor" name="rbiz_autorace_monitor" output="screen">
+  </node>
+
+  <node pkg="rosserial_python" type="serial_node.py" name="idm_traffic" output="screen">
+    <param name="port" value="/dev/ttyACM0"/>
+    <param name="baud" value="115200"/>
+  </node>
+
+  <node pkg="rosserial_python" type="serial_node.py" name="idm_level" output="screen">
+    <param name="port" value="/dev/ttyACM1"/>
+    <param name="baud" value="115200"/>
+  </node>
+
+  <node pkg="rosserial_python" type="serial_node.py" name="idm_stage" output="screen">
+    <param name="port" value="/dev/ttyACM2"/>
+    <param name="baud" value="115200"/>
+  </node>
+
+</launch>
