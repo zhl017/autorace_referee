@@ -8,4 +8,7 @@ Turtlebot3 Autonomous Driving Challenge Tool packages for 2020_Humanoid
 ~/catkin_ws/src/
 ```
 
+-use command `roslaunch rbiz_autorace_monitor rbiz_autorace_monitor.launch `
+
+
 ## If you need more information, please contact `info@idminer.com.tw`
