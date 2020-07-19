@@ -5,7 +5,7 @@ Turtlebot3 Autonomous Driving Challenge Tool packages for 2020_Humanoid
 
 - put each in the folder `ros_package` into your ROS catkin workspace, and `catkin_make`:
 ```
-~/catkin_ws/src
+~/catkin_ws/src/
 ```
 
 ## If you need more information, please contact `info@idminer.com.tw`
