@@ -17,7 +17,7 @@ OLLO ollo;
 /*
    variables
 */
-static uint16_t sensor_distance[3];
+static uint16_t sensor_distance[4];
 
 /*
    enum

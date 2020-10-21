@@ -33,13 +33,13 @@ void setup()
   //set RESET_BT
   ollo.begin(4, TOUCH_SENSOR);
 
-  //set LEDS  R:9 G:10 B:11
+  //set LEDS  Red:9 Yellow:10 Green:11 共陽極:HIGH(滅) 共陰極:LOW(滅)
   pinMode(9, OUTPUT);
   pinMode(10, OUTPUT);
   pinMode(11, OUTPUT);
-  digitalWrite(9, HIGH);
-  digitalWrite(10, HIGH);
-  digitalWrite(11, HIGH);
+  digitalWrite(9, LOW);
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
 
   //set BOX
   pinMode(GREEN_push, INPUT_PULLUP);
@@ -300,27 +300,27 @@ void fnControlLED()
 {
   if (led_color_ == LED_RED)
   {
-    digitalWrite(9, LOW);
-    digitalWrite(10, HIGH);
-    digitalWrite(11, HIGH);
+    digitalWrite(9, HIGH);
+    digitalWrite(10, LOW);
+    digitalWrite(11, LOW);
   }
   else if (led_color_ == LED_YELLOW)
   {
-    digitalWrite(9, HIGH);
-    digitalWrite(10, LOW);
-    digitalWrite(11, HIGH);
-  }
-  else if (led_color_ == LED_GREEN)
-  {
-    digitalWrite(9, HIGH);
+    digitalWrite(9, LOW);
     digitalWrite(10, HIGH);
     digitalWrite(11, LOW);
   }
+  else if (led_color_ == LED_GREEN)
+  {
+    digitalWrite(9, LOW);
+    digitalWrite(10, LOW);
+    digitalWrite(11, HIGH);
+  }
   else
   {
-    digitalWrite(9, HIGH);
-    digitalWrite(10, HIGH);
-    digitalWrite(11, HIGH);
+    digitalWrite(9, LOW);
+    digitalWrite(10, LOW);
+    digitalWrite(11, LOW);
   }
 }
 
