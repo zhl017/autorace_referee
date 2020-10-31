@@ -1,6 +1,7 @@
 # 2020_Humanoid
-Turtlebot3 Autonomous Driving Challenge Tool packages for 2020_Humanoid
+![](https://i.imgur.com/cKqtu9q.jpg)
 
+## How to use
 - upload each source in the folder `OpenCR_Code` into each OpenCR
 
 - put each in the folder `ros_package` into your ROS catkin workspace, and `catkin_make`:
@@ -14,7 +15,7 @@ Turtlebot3 Autonomous Driving Challenge Tool packages for 2020_Humanoid
 
 - /dev/ttyACM2  >>> Level Crossing
 
-## Launch the referee_monitor below:
+## Launch the referee_monitor
 ```
 roslaunch rbiz_autorace_monitor rbiz_autorace_monitor.launch
 ```
