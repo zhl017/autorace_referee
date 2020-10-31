@@ -7,14 +7,14 @@ Turtlebot3 Autonomous Driving Challenge Tool packages for 2020_Humanoid
 ```
 ~/catkin_ws/src/
 ```
-
+## Connect OpenCR to PC via USB connector
 - /dev/ttyACM0  >>> Traffic Light
 
 - /dev/ttyACM1  >>> Challenge Stage
 
 - /dev/ttyACM2  >>> Level Crossing
 
-- Launch the command below:
+## Launch the referee_monitor below:
 ```
 roslaunch rbiz_autorace_monitor rbiz_autorace_monitor.launch
 ```
