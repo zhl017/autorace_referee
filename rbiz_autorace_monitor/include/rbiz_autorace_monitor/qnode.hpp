@@ -16,7 +16,6 @@
 ** Includes
 *****************************************************************************/
 
-#ifndef Q_MOC_RUN
 #include <ros/ros.h>
 #include <std_msgs/Bool.h>
 #include <std_msgs/Int8.h>
@@ -24,7 +23,6 @@
 #include <string>
 #include <QThread>
 #include <QStringListModel>
-#endif
 
 /*****************************************************************************
 ** Namespaces

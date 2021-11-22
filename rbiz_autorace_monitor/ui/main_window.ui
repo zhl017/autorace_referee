@@ -11,10 +11,10 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>2020 TB3 AutoRace</string>
+   <string>AutoRace Referee</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../resources/images.qrc">
+   <iconset>
     <normaloff>:/images/icon.png</normaloff>:/images/icon.png</iconset>
   </property>
   <property name="locale">
@@ -449,7 +449,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Initialization</string>
+         <string>Reset Time</string>
         </property>
        </widget>
       </widget>
@@ -457,7 +457,7 @@
        <property name="geometry">
         <rect>
          <x>200</x>
-         <y>800</y>
+         <y>780</y>
          <width>621</width>
          <height>111</height>
         </rect>
@@ -661,7 +661,7 @@
        <property name="geometry">
         <rect>
          <x>980</x>
-         <y>800</y>
+         <y>780</y>
          <width>621</width>
          <height>111</height>
         </rect>
@@ -865,7 +865,7 @@
        <property name="geometry">
         <rect>
          <x>200</x>
-         <y>910</y>
+         <y>890</y>
          <width>621</width>
          <height>111</height>
         </rect>
@@ -1069,7 +1069,7 @@
        <property name="geometry">
         <rect>
          <x>980</x>
-         <y>910</y>
+         <y>890</y>
          <width>621</width>
          <height>111</height>
         </rect>
@@ -1283,17 +1283,6 @@
     </rect>
    </property>
   </widget>
-  <widget class="QToolBar" name="toolBar">
-   <property name="windowTitle">
-    <string>toolBar</string>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
   <action name="action_Quit">
    <property name="text">
     <string>&amp;Quit</string>
@@ -1321,9 +1310,7 @@
    </property>
   </action>
  </widget>
- <resources>
-  <include location="../resources/images.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>action_Quit</sender>

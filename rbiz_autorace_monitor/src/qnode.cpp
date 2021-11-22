@@ -243,7 +243,7 @@ void QNode::process()
             ros::Time current_time = ros::Time::now();
 
             ros::Duration dur_1 = current_time - start_trainging_time_;
-            ros::Duration dur = ros::Duration(300) - dur_1;
+            ros::Duration dur = ros::Duration(5 * 60) - dur_1;
             int min = dur.sec / 60;
             int sec = dur.sec % 60;
             int m_sec = dur.nsec / 10e6;
@@ -370,7 +370,7 @@ void QNode::process()
 
             time_pub.publish(time_msg);
 
-            if (dur.sec >= 300)     // time out 5 min
+            if (dur.sec >= 5 * 60)     // time out 5 min
             {
                 stopwatchStatus = TIMEOUT;
                 pbStateMsg(2);
