@@ -1,3 +1,6 @@
+## AutoRace Referee
+![](https://github.com/zhl017/omiyage/blob/main/Documents/images/2020_autorace_referee.png)
+
 ## How to use
 - put each in the folder `ros_package` into your ROS catkin workspace, and `catkin_make`:
 ```
