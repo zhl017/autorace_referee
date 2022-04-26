@@ -1,5 +1,6 @@
 # 2020_Humanoid
 ![](https://github.com/zhl017/omiyage/blob/main/Documents/images/2020_humanoid.png)
+![](https://github.com/zhl017/omiyage/blob/main/Documents/images/2020_autorace_referee.png)
 
 ## How to use
 - upload each source in the folder `OpenCR_Code` into each OpenCR
