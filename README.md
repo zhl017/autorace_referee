@@ -9,9 +9,7 @@
 ## Connect OpenCR to PC via USB connector
 - /dev/ttyACM0  >>> Traffic Light
 
-- /dev/ttyACM1  >>> Challenge Stage
-
-- /dev/ttyACM2  >>> Level Crossing
+- /dev/ttyACM1  >>> Level Crossing
 
 ## Launch the referee_monitor
 ```
