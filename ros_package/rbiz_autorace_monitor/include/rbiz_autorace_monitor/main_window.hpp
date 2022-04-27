@@ -63,16 +63,16 @@ public Q_SLOTS:
   void finishMission();
   void timeOut();
   // void updateLoggingView(); // no idea why this can't connect automatically
-  void startStage1Time(int min, int sec, int m_sec);
-  void finishStage1();
-  void startStage2Time(int min, int sec, int m_sec);
-  void finishStage2();
-  void startStage3Time(int min, int sec, int m_sec);
-  void finishStage3();
-  void failStage3();
-  void startStage4Time(int min, int sec, int m_sec);
-  void finishStage4();
-  void resetStage();
+  // void startStage1Time(int min, int sec, int m_sec);
+  // void finishStage1();
+  // void startStage2Time(int min, int sec, int m_sec);
+  // void finishStage2();
+  // void startStage3Time(int min, int sec, int m_sec);
+  // void finishStage3();
+  // void failStage3();
+  // void startStage4Time(int min, int sec, int m_sec);
+  // void finishStage4();
+  // void resetStage();
 
 private:
   Ui::MainWindowDesign ui;

@@ -278,95 +278,94 @@ void QNode::process()
             time_msg.mission_time[2] = m_sec;
 
             Q_EMIT startMissionTime(min, sec, m_sec);
-//            pub_time.publish(time_msg);
 
-            switch(stageStatus)
-            {
-                case S1:
-                {
-                    ros::Time stage_time = ros::Time::now();
-                    ros::Duration dur = stage_time - start_stage_time_;
-                    int min = dur.sec / 60;
-                    int sec = dur.sec % 60;
-                    int m_sec = dur.nsec / 10e6;
-                    time_msg.stage1_time[0] = min;
-                    time_msg.stage1_time[1] = sec;
-                    time_msg.stage1_time[2] = m_sec;
-                    Q_EMIT startStage1Time(min, sec, m_sec);
-                    break;
-                }
+            // switch(stageStatus)
+            // {
+            //     case S1:
+            //     {
+            //         ros::Time stage_time = ros::Time::now();
+            //         ros::Duration dur = stage_time - start_stage_time_;
+            //         int min = dur.sec / 60;
+            //         int sec = dur.sec % 60;
+            //         int m_sec = dur.nsec / 10e6;
+            //         time_msg.stage1_time[0] = min;
+            //         time_msg.stage1_time[1] = sec;
+            //         time_msg.stage1_time[2] = m_sec;
+            //         Q_EMIT startStage1Time(min, sec, m_sec);
+            //         break;
+            //     }
 
-                case S1END:
-                {
-                    Q_EMIT finishStage1();
-                    break;
-                }
+            //     case S1END:
+            //     {
+            //         Q_EMIT finishStage1();
+            //         break;
+            //     }
 
-                case S2:
-                {
-                    ros::Time stage_time = ros::Time::now();
-                    ros::Duration dur = stage_time - start_stage_time_;
-                    int min = dur.sec / 60;
-                    int sec = dur.sec % 60;
-                    int m_sec = dur.nsec / 10e6;
-                    time_msg.stage2_time[0] = min;
-                    time_msg.stage2_time[1] = sec;
-                    time_msg.stage2_time[2] = m_sec;
-                    Q_EMIT startStage2Time(min, sec, m_sec);
-                    break;
-                }
-
-
-                case S2END:
-                {
-                    Q_EMIT finishStage2();
-                    break;
-                }
+            //     case S2:
+            //     {
+            //         ros::Time stage_time = ros::Time::now();
+            //         ros::Duration dur = stage_time - start_stage_time_;
+            //         int min = dur.sec / 60;
+            //         int sec = dur.sec % 60;
+            //         int m_sec = dur.nsec / 10e6;
+            //         time_msg.stage2_time[0] = min;
+            //         time_msg.stage2_time[1] = sec;
+            //         time_msg.stage2_time[2] = m_sec;
+            //         Q_EMIT startStage2Time(min, sec, m_sec);
+            //         break;
+            //     }
 
 
-                case S3:
-                {
-                    Q_EMIT finishStage2();
-                    ros::Time stage_time = ros::Time::now();
-                    ros::Duration dur = stage_time - start_stage_time_;
-                    int min = dur.sec / 60;
-                    int sec = dur.sec % 60;
-                    int m_sec = dur.nsec / 10e6;
-                    time_msg.stage3_time[0] = min;
-                    time_msg.stage3_time[1] = sec;
-                    time_msg.stage3_time[2] = m_sec;
-                    Q_EMIT startStage3Time(min, sec, m_sec);
-                    break;
-                }
+            //     case S2END:
+            //     {
+            //         Q_EMIT finishStage2();
+            //         break;
+            //     }
 
-                case S3END:
-                {
-                    Q_EMIT finishStage3();
-                    break;
-                }
 
-                case S3FAIL:
-                {
-                    Q_EMIT failStage3();
-                    break;
-                }
+            //     case S3:
+            //     {
+            //         Q_EMIT finishStage2();
+            //         ros::Time stage_time = ros::Time::now();
+            //         ros::Duration dur = stage_time - start_stage_time_;
+            //         int min = dur.sec / 60;
+            //         int sec = dur.sec % 60;
+            //         int m_sec = dur.nsec / 10e6;
+            //         time_msg.stage3_time[0] = min;
+            //         time_msg.stage3_time[1] = sec;
+            //         time_msg.stage3_time[2] = m_sec;
+            //         Q_EMIT startStage3Time(min, sec, m_sec);
+            //         break;
+            //     }
 
-                case S4:
-                {
-                    ros::Time stage_time = ros::Time::now();
-                    ros::Duration dur = stage_time - start_stage_time_;
-                    int min = dur.sec / 60;
-                    int sec = dur.sec % 60;
-                    int m_sec = dur.nsec / 10e6;
-                    time_msg.stage4_time[0] = min;
-                    time_msg.stage4_time[1] = sec;
-                    time_msg.stage4_time[2] = m_sec;
-                    Q_EMIT startStage4Time(min, sec, m_sec);
-                    break;
-                }
-                default:
-                    break;
-            }
+            //     case S3END:
+            //     {
+            //         Q_EMIT finishStage3();
+            //         break;
+            //     }
+
+            //     case S3FAIL:
+            //     {
+            //         Q_EMIT failStage3();
+            //         break;
+            //     }
+
+            //     case S4:
+            //     {
+            //         ros::Time stage_time = ros::Time::now();
+            //         ros::Duration dur = stage_time - start_stage_time_;
+            //         int min = dur.sec / 60;
+            //         int sec = dur.sec % 60;
+            //         int m_sec = dur.nsec / 10e6;
+            //         time_msg.stage4_time[0] = min;
+            //         time_msg.stage4_time[1] = sec;
+            //         time_msg.stage4_time[2] = m_sec;
+            //         Q_EMIT startStage4Time(min, sec, m_sec);
+            //         break;
+            //     }
+            //     default:
+            //         break;
+            // }
 
             time_pub.publish(time_msg);
 
@@ -379,7 +378,7 @@ void QNode::process()
         }
         case FINISH:
             Q_EMIT finishMission();
-            Q_EMIT finishStage4();
+            // Q_EMIT finishStage4();
             break;
         case TIMEOUT:
             Q_EMIT timeOut();
