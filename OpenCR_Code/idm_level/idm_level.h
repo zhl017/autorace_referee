@@ -45,14 +45,14 @@ void fnControlLevel();
 /*
    publisher & fn
 */
-std_msgs::Int8 stage_msg;
-ros::Publisher stage_pub("stage", &stage_msg);
+// std_msgs::Int8 stage_msg;
+// ros::Publisher stage_pub("stage", &stage_msg);
 /*
    subscriber & fn
 */
 void resetCallback(const std_msgs::Bool &reset_msg);
-void stageCallback(const std_msgs::Int8 &stage_msg);
+// void stageCallback(const std_msgs::Int8 &stage_msg);
 void vehicleCallback(const std_msgs::Int8 &vehicle_msg);
 ros::Subscriber<std_msgs::Bool> reset_sub("reset", resetCallback);
-ros::Subscriber<std_msgs::Int8> stage_sub("stage", stageCallback);
+// ros::Subscriber<std_msgs::Int8> stage_sub("stage", stageCallback);
 ros::Subscriber<std_msgs::Int8> state_sub("vehicle", vehicleCallback);

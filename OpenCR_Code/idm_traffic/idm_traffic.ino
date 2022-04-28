@@ -19,19 +19,19 @@ void setup()
   nh.getHardware()->setBaud(115200);
   //publisher
   nh.advertise(vehicle_pub);
-  nh.advertise(stage_pub);
+  // nh.advertise(stage_pub);
   //subscriber
   nh.subscribe(reset_sub);
   nh.subscribe(state_sub);
 
-  nh.loginfo("Connected to OpenCR_TRAFFIC_LIGHT !!");
+  nh.loginfo("Connected to idm_traffic!");
 
   //set DMS
-  ollo.begin(DMS_START_LINE, DMS_SENSOR); // port 1
-  ollo.begin(DMS_INTERSECTION, DMS_SENSOR); //port 2
+  ollo.begin(1, DMS_SENSOR);
+  ollo.begin(2, DMS_SENSOR);
 
   //set RESET_BT
-  ollo.begin(RESET_BT, TOUCH_SENSOR); // port 4
+  ollo.begin(4, TOUCH_SENSOR);
 
   //set LEDS  Red:9 Yellow:10 Green:11 共陽極:HIGH(滅) 共陰極:LOW(滅)
   pinMode(9, OUTPUT);
@@ -42,8 +42,8 @@ void setup()
   digitalWrite(11, LOW);
 
   //set BOX
-  pinMode(GREEN_push, INPUT_PULLUP);  //GPIO 6
-  pinMode(RED_push, INPUT_PULLUP);  //GPIO 4
+  pinMode(GREEN_push, INPUT_PULLUP);
+  pinMode(RED_push, INPUT_PULLUP);
 
   //init Dynamixel
   motorDriver.init();
@@ -60,7 +60,7 @@ void loop()
 
   fnReceiveSensorDistance();
 
-  fnCheckStageStatus();
+  // fnCheckStageStatus();
 
   fnCheckVehicleStatus();
 
@@ -89,6 +89,7 @@ void fnInitTrafficLight()
 
   sensor_distance[0] = 0;
   sensor_distance[1] = 0;
+///  sensor_distance[2] = 0;
 
   training_start_time = 0.0;
   match_start_time = 0.0;
@@ -111,7 +112,7 @@ void fnInitTrafficLight()
   stage_state_ = STAGE;
 
   pbVehicle();
-  pbStage();
+  // pbStage();
 }
 
 void fnCheckMode()
@@ -152,7 +153,7 @@ void fnCheckMode()
 
 void fnReset()
 {
-  if (ollo.read(RESET_BT, TOUCH_SENSOR))
+  if (ollo.read(4, TOUCH_SENSOR))
   {
     fnInitDxl();
 
@@ -180,24 +181,24 @@ void fnReceiveSensorDistance() //get DMS value
   delay(100);
 }
 
-void fnCheckStageStatus()
-{
-  if (mode_ == MATCH_MODE)
-  {
-    if (sensor_distance[0] > DISTANCE_THRESHOLD_PASS && s1_start == false)
-    {
-      stage_state_ = S1;
-      pbStage();
-      s1_start = true;
-    }
-//    if (sensor_distance[2] > DISTANCE_THRESHOLD_PASS && s1_start == true && s1_end == false && level_trigger == true)
-//    {
-//      stage_state_ = S1END;
-//      pbStage();
-//      s1_end = true;
-//    }
-  }
-}
+// void fnCheckStageStatus()
+// {
+//   if (mode_ == MATCH_MODE)
+//   {
+//     if (sensor_distance[0] > DISTANCE_THRESHOLD_PASS && s1_start == false)
+//     {
+//       stage_state_ = S1;
+//       // pbStage();
+//       s1_start = true;
+//     }
+// //    if (sensor_distance[2] > DISTANCE_THRESHOLD_PASS && s1_start == true && s1_end == false && level_trigger == true)
+// //    {
+// //      stage_state_ = S1END;
+// //      pbStage();
+// //      s1_end = true;
+// //    }
+//   }
+// }
 
 void fnCheckVehicleStatus()
 {
@@ -299,27 +300,27 @@ void fnControlLED()
 {
   if (led_color_ == LED_RED)
   {
-    digitalWrite(9, HIGH);
-    digitalWrite(10, LOW);
-    digitalWrite(11, LOW);
+    digitalWrite(9, LOW);
+    digitalWrite(10, HIGH);
+    digitalWrite(11, HIGH);
   }
   else if (led_color_ == LED_YELLOW)
   {
-    digitalWrite(9, LOW);
-    digitalWrite(10, HIGH);
-    digitalWrite(11, LOW);
-  }
-  else if (led_color_ == LED_GREEN)
-  {
-    digitalWrite(9, LOW);
+    digitalWrite(9, HIGH);
     digitalWrite(10, LOW);
     digitalWrite(11, HIGH);
   }
+  else if (led_color_ == LED_GREEN)
+  {
+    digitalWrite(9, HIGH);
+    digitalWrite(10, HIGH);
+    digitalWrite(11, LOW);
+  }
   else
   {
-    digitalWrite(9, LOW);
-    digitalWrite(10, LOW);
-    digitalWrite(11, LOW);
+    digitalWrite(9, HIGH);
+    digitalWrite(10, HIGH);
+    digitalWrite(11, HIGH);
   }
 }
 
@@ -343,11 +344,11 @@ void pbVehicle()
   vehicle_msg.data = mission_state_;
   vehicle_pub.publish(&vehicle_msg);
 }
-void pbStage()
-{
-  stage_msg.data = stage_state_;
-  stage_pub.publish(&stage_msg);
-}
+// void pbStage()
+// {
+//   stage_msg.data = stage_state_;
+//   stage_pub.publish(&stage_msg);
+// }
 /*
    subscribe callback
 */

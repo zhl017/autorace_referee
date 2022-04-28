@@ -5,10 +5,10 @@ void setup()
   nh.initNode();
   nh.getHardware()->setBaud(115200);
 
-  nh.advertise(stage_pub);
+  // nh.advertise(stage_pub);
 
   nh.subscribe(reset_sub);
-  nh.subscribe(stage_sub);
+  // nh.subscribe(stage_sub);
   nh.subscribe(state_sub);
 
   nh.loginfo("Connected to idm_level!");
@@ -30,7 +30,7 @@ void loop()
 
   fnReceiveSensorDistance();
 
-  fnCheckStageStatus();
+  // fnCheckStageStatus();
 
   fnCheckVehicleStatus();
 
@@ -77,19 +77,19 @@ void fnReceiveSensorDistance()
   delay(100);
 }
 
-void fnCheckStageStatus()
-{
-  if (stage_state_ == S3)
-  {
-    if (sensor_distance[2] > DISTANCE_THRESHOLD_PASS && vehicle_state_ == STOP)
-    {
-      if (pass == true) stage_state_ = S3END;
-      else              stage_state_ = S3FAIL;
+// void fnCheckStageStatus()
+// {
+//   if (stage_state_ == S3)
+//   {
+//     if (sensor_distance[2] > DISTANCE_THRESHOLD_PASS && vehicle_state_ == STOP)
+//     {
+//       if (pass == true) stage_state_ = S3END;
+//       else              stage_state_ = S3FAIL;
 
-      pbStage();
-    }
-  }
-}
+//       pbStage();
+//     }
+//   }
+// }
 
 void fnCheckVehicleStatus()
 {
@@ -148,7 +148,7 @@ void fnLevelControl()
     {
       if (pass == false)
       {
-        level_status_ = LEVEL_OPENED;
+        level_status_ = LEVEL_MIDDLE;
       }
       else
       {
@@ -192,21 +192,21 @@ double fnGetSince()
   return elapsed_time;
 }
 
-void pbStage()
-{
-  stage_msg.data = stage_state_;
-  stage_pub.publish(&stage_msg);
-}
+// void pbStage()
+// {
+//   stage_msg.data = stage_state_;
+//   stage_pub.publish(&stage_msg);
+// }
 
 void resetCallback(const std_msgs::Bool &reset_msg)
 {
   fnInitLevel();
 }
 
-void stageCallback(const std_msgs::Int8 &stage_msg)
-{
-  if (stage_msg.data == 5) stage_state_ = S3;
-}
+// void stageCallback(const std_msgs::Int8 &stage_msg)
+// {
+//   if (stage_msg.data == 5) stage_state_ = S3;
+// }
 
 void vehicleCallback(const std_msgs::Int8 &vehicle_msg)
 {
