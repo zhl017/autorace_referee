@@ -1,5 +1,5 @@
 ## AutoRace Referee
-![](https://github.com/zhl017/omiyage/blob/main/Documents/images/2020_autorace_referee.png)
+![](https://github.com/zhl017/omiyage/blob/main/Documents/images/2022_autorace_referee.png)
 
 ## How to use
 - put each in the folder `ros_package` into your ROS catkin workspace, and `catkin_make`:
@@ -9,9 +9,7 @@
 ## Connect OpenCR to PC via USB connector
 - /dev/ttyACM0  >>> Traffic Light
 
-- /dev/ttyACM1  >>> Challenge Stage
-
-- /dev/ttyACM2  >>> Level Crossing
+- /dev/ttyACM1  >>> Level Crossing
 
 ## Launch the referee_monitor
 ```

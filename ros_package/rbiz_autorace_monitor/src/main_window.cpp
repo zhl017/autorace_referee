@@ -58,15 +58,15 @@ MainWindow::MainWindow(int argc, char** argv, QWidget *parent)
     QObject::connect(&qnode, SIGNAL(finishMission()), this, SLOT(finishMission()));
     QObject::connect(&qnode, SIGNAL(timeOut()), this, SLOT(timeOut()));
 
-    QObject::connect(&qnode, SIGNAL(startStage1Time(int, int, int)), this, SLOT(startStage1Time(int, int, int)));
-    QObject::connect(&qnode, SIGNAL(finishStage1()), this, SLOT(finishStage1()));
-    QObject::connect(&qnode, SIGNAL(startStage2Time(int, int, int)), this, SLOT(startStage2Time(int, int, int)));
-    QObject::connect(&qnode, SIGNAL(finishStage2()), this, SLOT(finishStage2()));
-    QObject::connect(&qnode, SIGNAL(startStage3Time(int, int, int)), this, SLOT(startStage3Time(int, int, int)));
-    QObject::connect(&qnode, SIGNAL(finishStage3()), this, SLOT(finishStage3()));
-    QObject::connect(&qnode, SIGNAL(failStage3()), this, SLOT(failStage3()));
-    QObject::connect(&qnode, SIGNAL(startStage4Time(int, int, int)), this, SLOT(startStage4Time(int, int, int)));
-    QObject::connect(&qnode, SIGNAL(finishStage4()), this, SLOT(finishStage4()));
+    // QObject::connect(&qnode, SIGNAL(startStage1Time(int, int, int)), this, SLOT(startStage1Time(int, int, int)));
+    // QObject::connect(&qnode, SIGNAL(finishStage1()), this, SLOT(finishStage1()));
+    // QObject::connect(&qnode, SIGNAL(startStage2Time(int, int, int)), this, SLOT(startStage2Time(int, int, int)));
+    // QObject::connect(&qnode, SIGNAL(finishStage2()), this, SLOT(finishStage2()));
+    // QObject::connect(&qnode, SIGNAL(startStage3Time(int, int, int)), this, SLOT(startStage3Time(int, int, int)));
+    // QObject::connect(&qnode, SIGNAL(finishStage3()), this, SLOT(finishStage3()));
+    // QObject::connect(&qnode, SIGNAL(failStage3()), this, SLOT(failStage3()));
+    // QObject::connect(&qnode, SIGNAL(startStage4Time(int, int, int)), this, SLOT(startStage4Time(int, int, int)));
+    // QObject::connect(&qnode, SIGNAL(finishStage4()), this, SLOT(finishStage4()));
 }
 
 MainWindow::~MainWindow() {}
@@ -160,8 +160,8 @@ void MainWindow::closeEvent(QCloseEvent *event)
 void MainWindow::readyAllTime()
 {
     ui.ready_min_1->display(0);
-    ui.ready_min_2->display(5);
-    ui.ready_sec_1->display(0);
+    ui.ready_min_2->display(0);
+    ui.ready_sec_1->display(1);
     ui.ready_sec_2->display(0);
     ui.ready_ms_1->display(0);
     ui.ready_ms_2->display(0);
@@ -201,86 +201,86 @@ void MainWindow::readyAllTime()
     ui.mission_ms_1->setAutoFillBackground(true);
     ui.mission_ms_2->setAutoFillBackground(true);
 
-    ui.stage1_min_1->display(0);
-    ui.stage1_min_2->display(0);
-    ui.stage2_min_1->display(0);
-    ui.stage2_min_2->display(0);
-    ui.stage3_min_1->display(0);
-    ui.stage3_min_2->display(0);
-    ui.stage4_min_1->display(0);
-    ui.stage4_min_2->display(0);
+    // ui.stage1_min_1->display(0);
+    // ui.stage1_min_2->display(0);
+    // ui.stage2_min_1->display(0);
+    // ui.stage2_min_2->display(0);
+    // ui.stage3_min_1->display(0);
+    // ui.stage3_min_2->display(0);
+    // ui.stage4_min_1->display(0);
+    // ui.stage4_min_2->display(0);
 
-    ui.stage1_sec_1->display(0);
-    ui.stage1_sec_2->display(0);
-    ui.stage2_sec_1->display(0);
-    ui.stage2_sec_2->display(0);
-    ui.stage3_sec_1->display(0);
-    ui.stage3_sec_2->display(0);
-    ui.stage4_sec_1->display(0);
-    ui.stage4_sec_2->display(0);
+    // ui.stage1_sec_1->display(0);
+    // ui.stage1_sec_2->display(0);
+    // ui.stage2_sec_1->display(0);
+    // ui.stage2_sec_2->display(0);
+    // ui.stage3_sec_1->display(0);
+    // ui.stage3_sec_2->display(0);
+    // ui.stage4_sec_1->display(0);
+    // ui.stage4_sec_2->display(0);
 
-    ui.stage1_ms_1->display(0);
-    ui.stage1_ms_2->display(0);
-    ui.stage2_ms_1->display(0);
-    ui.stage2_ms_2->display(0);
-    ui.stage3_ms_1->display(0);
-    ui.stage3_ms_2->display(0);
-    ui.stage4_ms_1->display(0);
-    ui.stage4_ms_2->display(0);
+    // ui.stage1_ms_1->display(0);
+    // ui.stage1_ms_2->display(0);
+    // ui.stage2_ms_1->display(0);
+    // ui.stage2_ms_2->display(0);
+    // ui.stage3_ms_1->display(0);
+    // ui.stage3_ms_2->display(0);
+    // ui.stage4_ms_1->display(0);
+    // ui.stage4_ms_2->display(0);
 
-    ui.stage1_min_1->setPalette(Qt::gray);
-    ui.stage1_min_2->setPalette(Qt::gray);
-    ui.stage2_min_1->setPalette(Qt::gray);
-    ui.stage2_min_2->setPalette(Qt::gray);
-    ui.stage3_min_1->setPalette(Qt::gray);
-    ui.stage3_min_2->setPalette(Qt::gray);
-    ui.stage4_min_1->setPalette(Qt::gray);
-    ui.stage4_min_2->setPalette(Qt::gray);
+    // ui.stage1_min_1->setPalette(Qt::gray);
+    // ui.stage1_min_2->setPalette(Qt::gray);
+    // ui.stage2_min_1->setPalette(Qt::gray);
+    // ui.stage2_min_2->setPalette(Qt::gray);
+    // ui.stage3_min_1->setPalette(Qt::gray);
+    // ui.stage3_min_2->setPalette(Qt::gray);
+    // ui.stage4_min_1->setPalette(Qt::gray);
+    // ui.stage4_min_2->setPalette(Qt::gray);
 
-    ui.stage1_sec_1->setPalette(Qt::gray);
-    ui.stage1_sec_2->setPalette(Qt::gray);
-    ui.stage2_sec_1->setPalette(Qt::gray);
-    ui.stage2_sec_2->setPalette(Qt::gray);
-    ui.stage3_sec_1->setPalette(Qt::gray);
-    ui.stage3_sec_2->setPalette(Qt::gray);
-    ui.stage4_sec_1->setPalette(Qt::gray);
-    ui.stage4_sec_2->setPalette(Qt::gray);
+    // ui.stage1_sec_1->setPalette(Qt::gray);
+    // ui.stage1_sec_2->setPalette(Qt::gray);
+    // ui.stage2_sec_1->setPalette(Qt::gray);
+    // ui.stage2_sec_2->setPalette(Qt::gray);
+    // ui.stage3_sec_1->setPalette(Qt::gray);
+    // ui.stage3_sec_2->setPalette(Qt::gray);
+    // ui.stage4_sec_1->setPalette(Qt::gray);
+    // ui.stage4_sec_2->setPalette(Qt::gray);
 
-    ui.stage1_ms_1->setPalette(Qt::gray);
-    ui.stage1_ms_2->setPalette(Qt::gray);
-    ui.stage2_ms_1->setPalette(Qt::gray);
-    ui.stage2_ms_2->setPalette(Qt::gray);
-    ui.stage3_ms_1->setPalette(Qt::gray);
-    ui.stage3_ms_2->setPalette(Qt::gray);
-    ui.stage4_ms_1->setPalette(Qt::gray);
-    ui.stage4_ms_2->setPalette(Qt::gray);
+    // ui.stage1_ms_1->setPalette(Qt::gray);
+    // ui.stage1_ms_2->setPalette(Qt::gray);
+    // ui.stage2_ms_1->setPalette(Qt::gray);
+    // ui.stage2_ms_2->setPalette(Qt::gray);
+    // ui.stage3_ms_1->setPalette(Qt::gray);
+    // ui.stage3_ms_2->setPalette(Qt::gray);
+    // ui.stage4_ms_1->setPalette(Qt::gray);
+    // ui.stage4_ms_2->setPalette(Qt::gray);
 
-    ui.stage1_min_1->setAutoFillBackground(true);
-    ui.stage1_min_2->setAutoFillBackground(true);
-    ui.stage2_min_1->setAutoFillBackground(true);
-    ui.stage2_min_2->setAutoFillBackground(true);
-    ui.stage3_min_1->setAutoFillBackground(true);
-    ui.stage3_min_2->setAutoFillBackground(true);
-    ui.stage4_min_1->setAutoFillBackground(true);
-    ui.stage4_min_2->setAutoFillBackground(true);
+    // ui.stage1_min_1->setAutoFillBackground(true);
+    // ui.stage1_min_2->setAutoFillBackground(true);
+    // ui.stage2_min_1->setAutoFillBackground(true);
+    // ui.stage2_min_2->setAutoFillBackground(true);
+    // ui.stage3_min_1->setAutoFillBackground(true);
+    // ui.stage3_min_2->setAutoFillBackground(true);
+    // ui.stage4_min_1->setAutoFillBackground(true);
+    // ui.stage4_min_2->setAutoFillBackground(true);
 
-    ui.stage1_sec_1->setAutoFillBackground(true);
-    ui.stage1_sec_2->setAutoFillBackground(true);
-    ui.stage2_sec_1->setAutoFillBackground(true);
-    ui.stage2_sec_2->setAutoFillBackground(true);
-    ui.stage3_sec_1->setAutoFillBackground(true);
-    ui.stage3_sec_2->setAutoFillBackground(true);
-    ui.stage4_sec_1->setAutoFillBackground(true);
-    ui.stage4_sec_2->setAutoFillBackground(true);
+    // ui.stage1_sec_1->setAutoFillBackground(true);
+    // ui.stage1_sec_2->setAutoFillBackground(true);
+    // ui.stage2_sec_1->setAutoFillBackground(true);
+    // ui.stage2_sec_2->setAutoFillBackground(true);
+    // ui.stage3_sec_1->setAutoFillBackground(true);
+    // ui.stage3_sec_2->setAutoFillBackground(true);
+    // ui.stage4_sec_1->setAutoFillBackground(true);
+    // ui.stage4_sec_2->setAutoFillBackground(true);
 
-    ui.stage1_ms_1->setAutoFillBackground(true);
-    ui.stage1_ms_2->setAutoFillBackground(true);
-    ui.stage2_ms_1->setAutoFillBackground(true);
-    ui.stage2_ms_2->setAutoFillBackground(true);
-    ui.stage3_ms_1->setAutoFillBackground(true);
-    ui.stage3_ms_2->setAutoFillBackground(true);
-    ui.stage4_ms_1->setAutoFillBackground(true);
-    ui.stage4_ms_2->setAutoFillBackground(true);
+    // ui.stage1_ms_1->setAutoFillBackground(true);
+    // ui.stage1_ms_2->setAutoFillBackground(true);
+    // ui.stage2_ms_1->setAutoFillBackground(true);
+    // ui.stage2_ms_2->setAutoFillBackground(true);
+    // ui.stage3_ms_1->setAutoFillBackground(true);
+    // ui.stage3_ms_2->setAutoFillBackground(true);
+    // ui.stage4_ms_1->setAutoFillBackground(true);
+    // ui.stage4_ms_2->setAutoFillBackground(true);
 }
 
 void MainWindow::startReadyTime()
@@ -305,33 +305,33 @@ void MainWindow::resetTrainingTime()
     start_ready_time_ = ros::Time::now();
 }
 
-void MainWindow::resetStage()
-{
-    ui.stage1_min_1->setPalette(Qt::gray);
-    ui.stage1_min_2->setPalette(Qt::gray);
-    ui.stage1_sec_1->setPalette(Qt::gray);
-    ui.stage1_sec_2->setPalette(Qt::gray);
-    ui.stage1_ms_1->setPalette(Qt::gray);
-    ui.stage1_ms_2->setPalette(Qt::gray);
-    ui.stage2_min_1->setPalette(Qt::gray);
-    ui.stage2_min_2->setPalette(Qt::gray);
-    ui.stage2_sec_1->setPalette(Qt::gray);
-    ui.stage2_sec_2->setPalette(Qt::gray);
-    ui.stage2_ms_1->setPalette(Qt::gray);
-    ui.stage2_ms_2->setPalette(Qt::gray);
-    ui.stage3_min_1->setPalette(Qt::gray);
-    ui.stage3_min_2->setPalette(Qt::gray);
-    ui.stage3_sec_1->setPalette(Qt::gray);
-    ui.stage3_sec_2->setPalette(Qt::gray);
-    ui.stage3_ms_1->setPalette(Qt::gray);
-    ui.stage3_ms_2->setPalette(Qt::gray);
-    ui.stage4_min_1->setPalette(Qt::gray);
-    ui.stage4_min_2->setPalette(Qt::gray);
-    ui.stage4_sec_1->setPalette(Qt::gray);
-    ui.stage4_sec_2->setPalette(Qt::gray);
-    ui.stage4_ms_1->setPalette(Qt::gray);
-    ui.stage4_ms_2->setPalette(Qt::gray);
-}
+// void MainWindow::resetStage()
+// {
+//     ui.stage1_min_1->setPalette(Qt::gray);
+//     ui.stage1_min_2->setPalette(Qt::gray);
+//     ui.stage1_sec_1->setPalette(Qt::gray);
+//     ui.stage1_sec_2->setPalette(Qt::gray);
+//     ui.stage1_ms_1->setPalette(Qt::gray);
+//     ui.stage1_ms_2->setPalette(Qt::gray);
+//     ui.stage2_min_1->setPalette(Qt::gray);
+//     ui.stage2_min_2->setPalette(Qt::gray);
+//     ui.stage2_sec_1->setPalette(Qt::gray);
+//     ui.stage2_sec_2->setPalette(Qt::gray);
+//     ui.stage2_ms_1->setPalette(Qt::gray);
+//     ui.stage2_ms_2->setPalette(Qt::gray);
+//     ui.stage3_min_1->setPalette(Qt::gray);
+//     ui.stage3_min_2->setPalette(Qt::gray);
+//     ui.stage3_sec_1->setPalette(Qt::gray);
+//     ui.stage3_sec_2->setPalette(Qt::gray);
+//     ui.stage3_ms_1->setPalette(Qt::gray);
+//     ui.stage3_ms_2->setPalette(Qt::gray);
+//     ui.stage4_min_1->setPalette(Qt::gray);
+//     ui.stage4_min_2->setPalette(Qt::gray);
+//     ui.stage4_sec_1->setPalette(Qt::gray);
+//     ui.stage4_sec_2->setPalette(Qt::gray);
+//     ui.stage4_ms_1->setPalette(Qt::gray);
+//     ui.stage4_ms_2->setPalette(Qt::gray);
+// }
 
 void MainWindow::readyMissionTime()
 {
@@ -373,94 +373,94 @@ void MainWindow::timeOut()
     ui.mission_ms_2->setPalette(Qt::red);
 }
 
-void MainWindow::startStage1Time(int min, int sec, int m_sec)
-{
-    ui.stage1_min_1->display(min/10);
-    ui.stage1_min_2->display(min%10);
-    ui.stage1_sec_1->display(sec/10);
-    ui.stage1_sec_2->display(sec%10);
-    ui.stage1_ms_1->display(m_sec/10);
-    ui.stage1_ms_2->display(m_sec%10);
-}
+// void MainWindow::startStage1Time(int min, int sec, int m_sec)
+// {
+//     ui.stage1_min_1->display(min/10);
+//     ui.stage1_min_2->display(min%10);
+//     ui.stage1_sec_1->display(sec/10);
+//     ui.stage1_sec_2->display(sec%10);
+//     ui.stage1_ms_1->display(m_sec/10);
+//     ui.stage1_ms_2->display(m_sec%10);
+// }
 
-void MainWindow::finishStage1()
-{
-    ui.stage1_min_1->setPalette(Qt::green);
-    ui.stage1_min_2->setPalette(Qt::green);
-    ui.stage1_sec_1->setPalette(Qt::green);
-    ui.stage1_sec_2->setPalette(Qt::green);
-    ui.stage1_ms_1->setPalette(Qt::green);
-    ui.stage1_ms_2->setPalette(Qt::green);
-}
+// void MainWindow::finishStage1()
+// {
+//     ui.stage1_min_1->setPalette(Qt::green);
+//     ui.stage1_min_2->setPalette(Qt::green);
+//     ui.stage1_sec_1->setPalette(Qt::green);
+//     ui.stage1_sec_2->setPalette(Qt::green);
+//     ui.stage1_ms_1->setPalette(Qt::green);
+//     ui.stage1_ms_2->setPalette(Qt::green);
+// }
 
-void MainWindow::startStage2Time(int min, int sec, int m_sec)
-{
-    ui.stage2_min_1->display(min/10);
-    ui.stage2_min_2->display(min%10);
-    ui.stage2_sec_1->display(sec/10);
-    ui.stage2_sec_2->display(sec%10);
-    ui.stage2_ms_1->display(m_sec/10);
-    ui.stage2_ms_2->display(m_sec%10);
-}
+// void MainWindow::startStage2Time(int min, int sec, int m_sec)
+// {
+//     ui.stage2_min_1->display(min/10);
+//     ui.stage2_min_2->display(min%10);
+//     ui.stage2_sec_1->display(sec/10);
+//     ui.stage2_sec_2->display(sec%10);
+//     ui.stage2_ms_1->display(m_sec/10);
+//     ui.stage2_ms_2->display(m_sec%10);
+// }
 
-void MainWindow::finishStage2()
-{
-    ui.stage2_min_1->setPalette(Qt::green);
-    ui.stage2_min_2->setPalette(Qt::green);
-    ui.stage2_sec_1->setPalette(Qt::green);
-    ui.stage2_sec_2->setPalette(Qt::green);
-    ui.stage2_ms_1->setPalette(Qt::green);
-    ui.stage2_ms_2->setPalette(Qt::green);
-}
+// void MainWindow::finishStage2()
+// {
+//     ui.stage2_min_1->setPalette(Qt::green);
+//     ui.stage2_min_2->setPalette(Qt::green);
+//     ui.stage2_sec_1->setPalette(Qt::green);
+//     ui.stage2_sec_2->setPalette(Qt::green);
+//     ui.stage2_ms_1->setPalette(Qt::green);
+//     ui.stage2_ms_2->setPalette(Qt::green);
+// }
 
-void MainWindow::startStage3Time(int min, int sec, int m_sec)
-{
-    ui.stage3_min_1->display(min/10);
-    ui.stage3_min_2->display(min%10);
-    ui.stage3_sec_1->display(sec/10);
-    ui.stage3_sec_2->display(sec%10);
-    ui.stage3_ms_1->display(m_sec/10);
-    ui.stage3_ms_2->display(m_sec%10);
-}
+// void MainWindow::startStage3Time(int min, int sec, int m_sec)
+// {
+//     ui.stage3_min_1->display(min/10);
+//     ui.stage3_min_2->display(min%10);
+//     ui.stage3_sec_1->display(sec/10);
+//     ui.stage3_sec_2->display(sec%10);
+//     ui.stage3_ms_1->display(m_sec/10);
+//     ui.stage3_ms_2->display(m_sec%10);
+// }
 
-void MainWindow::finishStage3()
-{
-    ui.stage3_min_1->setPalette(Qt::green);
-    ui.stage3_min_2->setPalette(Qt::green);
-    ui.stage3_sec_1->setPalette(Qt::green);
-    ui.stage3_sec_2->setPalette(Qt::green);
-    ui.stage3_ms_1->setPalette(Qt::green);
-    ui.stage3_ms_2->setPalette(Qt::green);
-}
+// void MainWindow::finishStage3()
+// {
+//     ui.stage3_min_1->setPalette(Qt::green);
+//     ui.stage3_min_2->setPalette(Qt::green);
+//     ui.stage3_sec_1->setPalette(Qt::green);
+//     ui.stage3_sec_2->setPalette(Qt::green);
+//     ui.stage3_ms_1->setPalette(Qt::green);
+//     ui.stage3_ms_2->setPalette(Qt::green);
+// }
 
-void MainWindow::failStage3()
-{
-    ui.stage3_min_1->setPalette(Qt::gray);
-    ui.stage3_min_2->setPalette(Qt::gray);
-    ui.stage3_sec_1->setPalette(Qt::gray);
-    ui.stage3_sec_2->setPalette(Qt::gray);
-    ui.stage3_ms_1->setPalette(Qt::gray);
-    ui.stage3_ms_2->setPalette(Qt::gray);
-}
+// void MainWindow::failStage3()
+// {
+//     ui.stage3_min_1->setPalette(Qt::gray);
+//     ui.stage3_min_2->setPalette(Qt::gray);
+//     ui.stage3_sec_1->setPalette(Qt::gray);
+//     ui.stage3_sec_2->setPalette(Qt::gray);
+//     ui.stage3_ms_1->setPalette(Qt::gray);
+//     ui.stage3_ms_2->setPalette(Qt::gray);
+// }
 
-void MainWindow::startStage4Time(int min, int sec, int m_sec)
-{
-    ui.stage4_min_1->display(min/10);
-    ui.stage4_min_2->display(min%10);
-    ui.stage4_sec_1->display(sec/10);
-    ui.stage4_sec_2->display(sec%10);
-    ui.stage4_ms_1->display(m_sec/10);
-    ui.stage4_ms_2->display(m_sec%10);
-}
+// void MainWindow::startStage4Time(int min, int sec, int m_sec)
+// {
+//     ui.stage4_min_1->display(min/10);
+//     ui.stage4_min_2->display(min%10);
+//     ui.stage4_sec_1->display(sec/10);
+//     ui.stage4_sec_2->display(sec%10);
+//     ui.stage4_ms_1->display(m_sec/10);
+//     ui.stage4_ms_2->display(m_sec%10);
+// }
 
-void MainWindow::finishStage4()
-{
-    ui.stage4_min_1->setPalette(Qt::green);
-    ui.stage4_min_2->setPalette(Qt::green);
-    ui.stage4_sec_1->setPalette(Qt::green);
-    ui.stage4_sec_2->setPalette(Qt::green);
-    ui.stage4_ms_1->setPalette(Qt::green);
-    ui.stage4_ms_2->setPalette(Qt::green);
-}
+// void MainWindow::finishStage4()
+// {
+//     ui.stage4_min_1->setPalette(Qt::green);
+//     ui.stage4_min_2->setPalette(Qt::green);
+//     ui.stage4_sec_1->setPalette(Qt::green);
+//     ui.stage4_sec_2->setPalette(Qt::green);
+//     ui.stage4_ms_1->setPalette(Qt::green);
+//     ui.stage4_ms_2->setPalette(Qt::green);
+// }
 
 } // namespace rbiz_autorace_monitorX
